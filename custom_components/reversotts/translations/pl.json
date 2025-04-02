@@ -1,0 +1,16 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "data": {
+          "language": "Język",
+          "pitch": "Prędkość mowy",
+          "bitrate": "Szybkość transmisji bitów"
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Usługa jest już skonfigurowana"
+    }
+  }
+}

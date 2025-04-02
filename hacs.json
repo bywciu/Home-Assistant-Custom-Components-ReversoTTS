@@ -1,0 +1,8 @@
+{
+  "name": "Reverso TTS",
+  "render_readme": true,
+  "zip_release": true,
+  "filename": "reversotts.zip",
+  "country": "PL",
+  "homeassistant": "2024.1.0"
+}

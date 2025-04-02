@@ -1,0 +1,12 @@
+{
+  "domain": "reversotts",
+  "name": "Reverso text-to-speech",
+  "codeowners": ["@bywciu"],
+  "config_flow": true,
+  "documentation": "https://github.com/bywciu/Home-Assistant-Custom-Components-ReversoTTS",
+  "integration_type": "service",
+  "iot_class": "cloud_push",
+  "issue_tracker": "https://github.com/bywciu/Home-Assistant-Custom-Components-ReversoTTS/issues",
+  "requirements": ["pyttsreverso==0.4"],
+  "version": "0.1.0"
+}
