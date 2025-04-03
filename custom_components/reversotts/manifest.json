@@ -8,5 +8,5 @@
   "iot_class": "cloud_push",
   "issue_tracker": "https://github.com/bywciu/Home-Assistant-Custom-Components-ReversoTTS/issues",
   "requirements": ["pyttsreverso==0.4"],
-  "version": "0.1.0"
+  "version": "0.2.0"
 }

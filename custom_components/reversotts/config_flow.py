@@ -6,9 +6,8 @@ from typing import Any
 
 import voluptuous as vol
 
-from homeassistant import config_entries
 from homeassistant.components.tts import CONF_LANG
-from homeassistant.data_entry_flow import FlowResult
+from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
 
 from .const import (
     CONF_BITRATE,
@@ -30,14 +29,14 @@ STEP_USER_DATA_SCHEMA = vol.Schema(
 )
 
 
-class ReversoConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
+class ReversoConfigFlow(ConfigFlow, domain=DOMAIN):
     """Handle a config flow for Reverso text-to-speech."""
 
     VERSION = 1
 
     async def async_step_user(
         self, user_input: dict[str, Any] | None = None
-    ) -> FlowResult:
+    ) -> ConfigFlowResult:
         """Handle the initial step."""
         if user_input is not None:
             self._async_abort_entries_match(
@@ -55,7 +54,7 @@ class ReversoConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
 
     async def async_step_onboarding(
         self, data: dict[str, Any] | None = None
-    ) -> FlowResult:
+    ) -> ConfigFlowResult:
         """Handle a flow initialized by onboarding."""
         return self.async_create_entry(
             title="Reverso text-to-speech",
