@@ -3,14 +3,14 @@
     "step": {
       "user": {
         "data": {
-          "language": "Language",
+          "language": "[%key:common::config_flow::data::language%]",
           "pitch": "Speak speed",
           "bitrate": "Bitrate"
         }
       }
     },
     "abort": {
-      "already_configured": "Service is already configured"
+      "already_configured": "[%key:common::config_flow::abort::already_configured_service%]"
     }
   }
 }
