@@ -1,10 +1,10 @@
-[![HACS Default][hacs_shield]][hacs]
+[![HACS Custom][hacs_shield]][hacs]
 [![GitHub Latest Release][releases_shield]][latest_release]
 [![GitHub All Releases][downloads_total_shield]][releases]
 [![Installations][installations_shield]][releases]
 
-[hacs_shield]: https://img.shields.io/static/v1.svg?label=HACS&message=Default&style=popout&color=green&labelColor=41bdf5&logo=HomeAssistantCommunityStore&logoColor=white
-[hacs]: https://hacs.xyz/docs/default_repositories
+[hacs_shield]: https://img.shields.io/badge/HACS-Custom-white?logo=HomeAssistantCommunityStore&logoColor=white&label=HACS&labelColor=41bdf5&color=green
+[hacs]: https://www.hacs.xyz/docs/faq/custom_repositories/
 
 [latest_release]: https://github.com/bywciu/Home-Assistant-Custom-Components-ReversoTTS/releases/latest
 [releases_shield]: https://img.shields.io/github/release/bywciu/Home-Assistant-Custom-Components-ReversoTTS.svg?style=popout
