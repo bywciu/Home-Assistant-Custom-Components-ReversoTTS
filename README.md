@@ -161,9 +161,7 @@ default: "`100`"
 
 #### Bitrate
 
-The `bitrate` for the sound quality. The supported bitrate values are `22k, 96k, 128k, 192k, 320k`.
-
-default: "`128k`"
+The `bitrate` for the sound quality is fixed at 128 kbps.
 
 ## Usage examples
 
@@ -192,5 +190,5 @@ There are several ways how to use TTS service.
           media_player_entity_id: media_player.google_mini_salon
           message: This is a test
         target:
-          entity_id: tts.reverso_tts_polish_ania_100_320k
+          entity_id: tts.reverso_tts_polish_ania_100
   ```

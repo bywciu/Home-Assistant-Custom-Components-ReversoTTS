@@ -23,15 +23,12 @@ from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
 from homeassistant.util import slugify
 
 from .const import (
-    CONF_BITRATE,
     CONF_PITCH,
     DEFAULT_BITRATE,
     DEFAULT_LANG,
     DEFAULT_PITCH,
-    BITRATE_OPTIONS,
     SUPPORT_LANGUAGES,
     SUPPORT_OPTIONS,
-    BITRATE_OPTIONS,
 )
 
 _LOGGER = logging.getLogger(__name__)
@@ -40,7 +37,6 @@ PLATFORM_SCHEMA = TTS_PLATFORM_SCHEMA.extend(
     {
         vol.Optional(CONF_LANG, default=DEFAULT_LANG): vol.In(SUPPORT_LANGUAGES),
         vol.Optional(CONF_PITCH, default=DEFAULT_PITCH): str,
-        vol.Optional(CONF_BITRATE, default=DEFAULT_BITRATE): vol.In(BITRATE_OPTIONS),
     }
 )
 
@@ -55,7 +51,6 @@ async def async_get_engine(
         hass,
         config[CONF_LANG],
         config[CONF_PITCH],
-        config[CONF_BITRATE],
     )
 
 
@@ -67,8 +62,7 @@ async def async_setup_entry(
     """Set up Reverso speech platform via config entry."""
     default_language = config_entry.data[CONF_LANG]
     default_pitch = config_entry.data[CONF_PITCH]
-    default_bitrate = config_entry.data[CONF_BITRATE]
-    async_add_entities([ReversoTTSEntity(config_entry, default_language, default_pitch, default_bitrate)])
+    async_add_entities([ReversoTTSEntity(config_entry, default_language, default_pitch, DEFAULT_BITRATE)])
 
 
 class ReversoTTSEntity(TextToSpeechEntity):
@@ -81,7 +75,7 @@ class ReversoTTSEntity(TextToSpeechEntity):
         self._bitrate = bitrate
 
         self._attr_name = f"Reverso TTS {SUPPORT_LANGUAGES[self._lang]}"
-        self.entity_id = f"tts.{slugify(self._attr_name)}_{self._pitch}_{self._bitrate}"
+        self.entity_id = f"tts.{slugify(self._attr_name)}_{self._pitch}"
         self._attr_unique_id = config_entry.entry_id
 
     @property

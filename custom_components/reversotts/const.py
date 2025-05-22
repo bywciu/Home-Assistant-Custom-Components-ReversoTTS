@@ -7,9 +7,8 @@ CONF_PITCH = "pitch"
 CONF_BITRATE = "bitrate"
 DEFAULT_LANG = "Sharon-US-English"
 DEFAULT_PITCH = "100"
-DEFAULT_BITRATE = "128k"
+DEFAULT_BITRATE = "128"
 SUPPORT_OPTIONS = ["pitch", "bitrate"]
-BITRATE_OPTIONS = ["22k", "96k", "128k", "192k", "320k"]
 
 SUPPORT_LANGUAGES = {
     "Leila-Arabic": "Arabic - Leila",

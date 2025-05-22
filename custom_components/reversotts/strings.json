@@ -4,8 +4,7 @@
       "user": {
         "data": {
           "language": "[%key:common::config_flow::data::language%]",
-          "pitch": "Speak speed",
-          "bitrate": "Bitrate"
+          "pitch": "Speak speed"
         }
       }
     },

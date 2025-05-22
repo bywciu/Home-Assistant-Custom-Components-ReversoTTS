@@ -10,21 +10,17 @@ from homeassistant.components.tts import CONF_LANG
 from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
 
 from .const import (
-    CONF_BITRATE,
     CONF_PITCH,
-    DEFAULT_BITRATE,
     DEFAULT_LANG,
     DEFAULT_PITCH,
     DOMAIN,
     SUPPORT_LANGUAGES,
-    BITRATE_OPTIONS,
 )
 
 STEP_USER_DATA_SCHEMA = vol.Schema(
     {
         vol.Optional(CONF_LANG, default=DEFAULT_LANG): vol.In(SUPPORT_LANGUAGES),
         vol.Optional(CONF_PITCH, default=DEFAULT_PITCH): str,
-        vol.Optional(CONF_BITRATE, default=DEFAULT_BITRATE): vol.In(BITRATE_OPTIONS),
     }
 )
 
@@ -43,7 +39,6 @@ class ReversoConfigFlow(ConfigFlow, domain=DOMAIN):
                 {
                     CONF_LANG: user_input[CONF_LANG],
                     CONF_PITCH: user_input[CONF_PITCH],
-                    CONF_BITRATE: user_input[CONF_BITRATE],
                 }
             )
             return self.async_create_entry(
@@ -61,6 +56,5 @@ class ReversoConfigFlow(ConfigFlow, domain=DOMAIN):
             data={
                 CONF_LANG: DEFAULT_LANG,
                 CONF_PITCH: DEFAULT_PITCH,
-                CONF_BITRATE: DEFAULT_BITRATE,
             },
         )

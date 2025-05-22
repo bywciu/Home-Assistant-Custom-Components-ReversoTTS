@@ -4,8 +4,7 @@
       "user": {
         "data": {
           "language": "[%key:common::config_flow::data::language%]",
-          "pitch": "Prędkość mowy",
-          "bitrate": "Szybkość transmisji bitów"
+          "pitch": "Prędkość mowy"
         }
       }
     },
