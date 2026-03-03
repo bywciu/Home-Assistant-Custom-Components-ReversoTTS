@@ -5,8 +5,9 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from pyttsreverso import pyttsreverso
 import voluptuous as vol
+
+from .reverso_api import ReversoTTS
 
 from homeassistant.components.tts import (
     CONF_LANG,
@@ -86,7 +87,7 @@ class ReversoTTSEntity(TextToSpeechEntity):
     @property
     def supported_languages(self) -> list[str]:
         """Return list of supported languages."""
-        return SUPPORT_LANGUAGES
+        return list(SUPPORT_LANGUAGES.keys())
 
     @property
     def supported_options(self) -> list[str]:
@@ -101,7 +102,7 @@ class ReversoTTSEntity(TextToSpeechEntity):
             language = self._lang
 
         try:
-            tts = pyttsreverso.ReversoTTS()
+            tts = ReversoTTS()
             mp3_data = tts.convert_text(
                 voice=language, pitch=self._pitch, bitrate=self._bitrate, msg=message
             )
@@ -133,7 +134,7 @@ class ReversoProvider(Provider):
     @property
     def supported_languages(self) -> list[str]:
         """Return list of supported languages."""
-        return SUPPORT_LANGUAGES
+        return list(SUPPORT_LANGUAGES.keys())
 
     @property
     def supported_options(self) -> list[str]:
@@ -148,7 +149,7 @@ class ReversoProvider(Provider):
             language = self._lang
 
         try:
-            tts = pyttsreverso.ReversoTTS()
+            tts = ReversoTTS()
             mp3_data = tts.convert_text(
                 voice=language, pitch=self._pitch, bitrate=self._bitrate, msg=message
             )
